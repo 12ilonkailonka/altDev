@@ -46,12 +46,21 @@ body {
     &-colored {
         background-color: var(--accent);
         color: var(--surface);
+
+        &:hover {
+            background-color: var(--accent-hover);
+        }
     }
 
     &-ghost {
         background-color: transparent;
         border: solid 0.1rem var(--accent);
         color: var(--accent);
+
+        &:hover {
+            background-color: var(--accent);
+            color: var(--surface)
+        }
     }
 }
 
@@ -61,4 +70,29 @@ hr {
     height: 0.1rem;
     border-radius: var(--radius-pill);
     margin: 1.25rem 0;
+}
+
+
+
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(-1deg);
+    }
+}
+
+@keyframes float-alt {
+    0%,
+    100% {
+        transform: translateY(0) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(12px) rotate(2deg);
+    }
 }

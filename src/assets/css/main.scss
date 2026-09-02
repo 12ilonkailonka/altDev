@@ -45,6 +45,44 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__ribbon-2-title {
+        font-weight: 800;
+        font-size: 1.2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    &__ribbon-2-text > span {
+        color: var(--accent);
+        font-weight: 800;
+    }
+
+    &__article {
+        position: absolute;
+        background-color: var(--header-color);
+        backdrop-filter: blur(1.2rem);
+        z-index: 100;
+        padding: 20px;
+        border-radius: var(--radius-m);
+        box-shadow: var(--shadow);
+        animation: float 5s ease-in-out infinite;
+
+        &.ribbon_1 {
+            transform: rotate(-2deg);
+            top: 3rem;
+            width: 15rem;
+            right: -2rem;
+        }
+        &.ribbon_2 {
+            transform: rotate(1deg);
+            bottom: 4.5rem;
+            left: -4rem;
+        }
+    }
+}
+
+.animate {
+    animation: float-alt 7s ease-in-out infinite;
 }
 
 .points {
@@ -70,6 +108,7 @@
 }
 
 .card {
+    position: relative;
 
     &__path {
         color: var(--text-muted);
@@ -151,4 +190,8 @@
     &__views {
         padding: 1.5rem 0;
     }
+}
+
+.hero-section {
+    position: relative;
 }

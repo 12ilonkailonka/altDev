@@ -1,15 +1,19 @@
 .header {
     height: var(--header-height);
     width: 100vw;
-    background-color: var(--header-color);
-    backdrop-filter: blur(0.75em);
-    box-shadow: var(--shadow);
     display: flex;
     justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
+    transition: var(--transition);
+
+    &.header--scrolled {
+        background-color: var(--header-color);
+        backdrop-filter: blur(0.75em);
+        box-shadow: var(--shadow);
+    }
 
 
     &.top {

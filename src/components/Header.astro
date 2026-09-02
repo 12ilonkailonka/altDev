@@ -14,3 +14,21 @@ import '../assets/css/header.scss'
         </ul>
     </nav>
 </header>
+
+<script>
+    const header = document.querySelector('header');
+
+    const toggleHeaderClass = () => {
+        if (!header) return;
+        
+        if (window.scrollY > 5) {
+            header.classList.add('header--scrolled');
+        } else {
+            header.classList.remove('header--scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', toggleHeaderClass, { passive: true });
+    
+    toggleHeaderClass();
+</script>
