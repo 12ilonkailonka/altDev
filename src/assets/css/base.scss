@@ -1,0 +1,64 @@
+@use 'reset';
+@use 'fonts';
+@use 'vars';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: 'MarynaText';
+    font-size: 1.125rem;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1;
+}
+
+.container {
+    width: 95vw;
+    max-width: 81rem;
+}
+
+.page {
+    padding-top: var(--header-height);
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 1rem 1.4rem;
+    border-radius: var(--radius-pill);
+    transition: var(--transition);
+
+    &:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: var(--shadow);
+    }
+
+    &:active {
+        transform: translateY(-0.06rem);
+        transition: background-color 0.2s ease; 
+    }
+
+    &-colored {
+        background-color: var(--accent);
+        color: var(--surface);
+    }
+
+    &-ghost {
+        background-color: transparent;
+        border: solid 0.1rem var(--accent);
+        color: var(--accent);
+    }
+}
+
+hr {
+    color: var(--text-muted);
+    background-color: var(--hr-light);
+    height: 0.1rem;
+    border-radius: var(--radius-pill);
+    margin: 1.25rem 0;
+}

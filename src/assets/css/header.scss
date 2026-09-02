@@ -1,0 +1,43 @@
+.header {
+    height: var(--header-height);
+    width: 100vw;
+    background-color: var(--header-color);
+    backdrop-filter: blur(0.75em);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+
+    &.top {
+        background-color: transparent;
+    }
+
+    &__container {
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        font-weight: 800;
+    }
+
+    &__list {
+        display: flex;
+        gap: 1.75rem;
+        color: var(--text-soft);
+    }
+
+    &__link {
+        transition: var(--transition);
+        
+        &:hover {
+            color: var(--accent);
+        }
+    }
+}
