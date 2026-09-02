@@ -1,3 +1,20 @@
+$breakpoints: (
+  sm: 430px,
+  md: 650px,
+  lg: 800px,
+  xl: 1100px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Не найден брейкпоинт: #{$breakpoint}.";
+  }
+}
+
 .header {
     height: var(--header-height);
     width: 100vw;
@@ -35,6 +52,11 @@
         display: flex;
         gap: 1.75rem;
         color: var(--text-soft);
+
+        @include respond-to(lg) {
+            display: none;
+            visibility: hidden;
+        }
     }
 
     &__link {
