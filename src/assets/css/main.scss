@@ -1,13 +1,43 @@
+$breakpoints: (
+  sm: 500px,
+  md: 650px,
+  lg: 800px,
+  xl: 1100px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Не найден брейкпоинт: #{$breakpoint}.";
+  }
+}
+
 .hero-grid {
-    padding-top: 9.5rem;
+    padding-top: 6.5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3.125rem;
+
+    @include respond-to(xl) {
+        grid-template-columns: 1fr;
+    }
 
     &__title {
         font-size: 3.75rem;
         font-weight: 600;
         line-height: 0.8;
+        max-width: 38rem;
+
+        @include respond-to(lg) {
+            font-size: 3rem;
+        }
+
+        @include respond-to(md) {
+            font-size: 2.75rem;
+        }
 
     & > span {
         color: var(--accent);
@@ -17,6 +47,7 @@
     &__text {
         padding-top: 2.5rem;
         color: var(--text-soft);
+        max-width: 40rem;
     }
 
     &__card {
@@ -24,6 +55,10 @@
         border-radius: var(--radius-l);
         box-shadow: var(--shadow);
         padding: 2.5rem;
+
+        @include respond-to(lg) {
+            padding: 1.5rem;
+        }
     }
 
     &__item.item_1 {
@@ -35,15 +70,21 @@
     &__buttons-wrapper {
         padding-top: 2rem;
         padding-bottom: 2rem;
-    }
+        display: flex;
+        gap: 20px;
 
-    &__button {
-        margin-right: 1rem;
+        @include respond-to(sm) {
+            flex-direction: column;
+        }
     }
 
     &__points {
         display: flex;
         justify-content: space-between;
+
+        @include respond-to(lg) {
+            flex-direction: column;
+        }
     }
 
     &__ribbon-2-title {
@@ -72,11 +113,19 @@
             top: 3rem;
             width: 15rem;
             right: -2rem;
+
+            @include respond-to(xl) {
+                right: 1rem;
+            }
         }
         &.ribbon_2 {
             transform: rotate(1deg);
             bottom: 4.5rem;
             left: -4rem;
+
+            @include respond-to(xl) {
+                left: 0rem;
+            }
         }
     }
 }
@@ -91,6 +140,7 @@
         color: var(--accent);
         font-size: 1.5rem;
         font-weight: 800;
+        padding-top: 10px;
     }
 }
 
