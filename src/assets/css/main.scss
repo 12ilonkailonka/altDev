@@ -244,4 +244,116 @@ $breakpoints: (
 
 .hero-section {
     position: relative;
+    padding-bottom: 5rem;
+}
+
+
+// project section
+
+
+.project-section {
+    padding-top: 100px;
+    background-color: var(--surface);
+
+    &__title {
+        font-size: 4rem;
+        width: 55rem;
+        font-weight: 800;
+        padding-top: 1.25rem;
+    }
+
+    &__text-big {
+        font-size: 2.75rem;
+    }
+
+    &__text-big > span {
+        color: var(--accent);
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 4rem;
+        gap: 10rem;
+    }
+
+    &__item {
+        padding-top: 0.75rem;
+    }
+
+    &__text-small {
+        padding-top: 1rem;
+        color: var(--text-soft);
+    }
+
+
+    &__points {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding: 7.5rem 0;
+    }
+
+    &__point {
+        height: 20rem;
+        border-radius: var(--radius-l);
+        background-color: var(--surface-soft);
+        width: 100%;
+        padding: 1.25rem;
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+
+        &.blue {
+            background-color: var(--accent);
+        }
+    }
+}
+
+.section-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--accent);
+}
+
+.point {
+
+    &__number {
+        color: var(--text-muted);
+        padding: 1rem 0;
+
+        &.white {
+            color: var(--surface);
+        }
+    }
+
+    &__ico {
+        height: 3rem;
+        width: 3rem;
+
+        &.white {
+            filter: brightness(100);
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 1rem 0;
+
+        &.white {
+            color: var(--surface);
+        }
+    }
+
+    &__text {
+        color: var(--text-soft);
+
+        &.white {
+            color: var(--text-light);
+        }
+    }
 }
