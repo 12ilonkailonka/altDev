@@ -37,6 +37,15 @@ $breakpoints: (
         background-color: transparent;
     }
 
+    &.dark {
+        background-color: var(--header-color-dark);
+        color: var(--surface-soft);
+
+        & > * {
+            color: var(--surface-soft);
+        }
+    }
+
     &__container {
         height: 100%;
         align-items: center;

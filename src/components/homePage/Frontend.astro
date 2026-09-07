@@ -1,0 +1,88 @@
+---
+import Code from './Code.astro'
+import Code2 from './Code2.astro'
+---
+<section class="page frontend-section" id="frontend">
+<div class="container">
+
+    <div class="frontend-grid">
+
+        <div class="frontend-grid__item item_1">
+            <div class="section-meta meta-horizontal">
+                <p class="section-meta__number">02</p>
+                <p class="section-meta__name">Frontend</p>
+            </div>
+            <h2 class="frontend-grid__title">Графика — это тоже язык.</h2>
+            <p class="frontend-grid__text">
+                Сначала мы задали себе вопрос — а как люди привыкли взаимодействовать с интерфейсом?
+                Потом задали вопрос — а что прямо сейчас людям не нравится в этом взаимодействии?
+                И наконец — а как мы можем решить эти проблемы в свойм?
+            </p>
+
+            <ul class="frontend-grid__technologies">
+                <li class="frontend-grid__technology">Vue.js</li>
+                <li class="frontend-grid__technology">SCSS</li>
+                <li class="frontend-grid__technology">TypeScript</li>
+                <li class="frontend-grid__technology">Viola Design</li>
+            </ul>
+        </div>
+
+        <ol class="frontend-grid__item item_2">
+
+            <li class="frontend-grid__card">
+                <p class="card__number">01</p>
+                <h3 class="card__title">Дизайн-код</h3>
+                <p class="card__text">
+                    Не готовое решение. Не чужая адоптация. Не модная сиюминутно картинка. 
+                    Набор строгих правил о том, что и как должно выглядеть, делающий каждый 
+                    блок и каждую страницу узнаваемыми и единообразными. 
+                </p>
+                <p class="card__text">
+                    Размеры, сетки, цвета, акценты, тени, анимации, скругления углов.
+                    Именно тысяча<span> мелочей</span> незаметных по отдельности и превращают очередной сайт
+                    в магию собственной <span>идентичности</span> и общего <span>стиля.</span>
+                </p>
+            </li>
+
+            <li class="frontend-grid__card">
+                <p class="card__number">02</p>
+                <h3 class="card__title">Maryna Sans</h3>
+                <p class="card__text">
+                    Шрифт — это лицо любого бренда. Логотип обычно ютится в углу и сверху, никто
+                    не приходит его рассматривать. Брендовые <span class="accent">цвета</span> может и запоминаются, но это 
+                    лишь акценты.
+                </p>
+                <p class="card__text">
+                    Шрифт виден <span class="accent">всегда</span>. Он обязан не только быть узнаваемым, но и 
+                    сохранять при этом главную черту шрифта — возможность быстро и просто его шитать. Это сложный баланс
+                    между узнаваемостью, уникальностью и привычностью.
+                </p>
+            </li>
+
+            <li class="frontend-grid__card">
+                <p class="card__number">03</p>
+                <h3 class="card__title">SCSS</h3>
+                <p class="card__text">
+                    Большую часть визуального слоя мы оставляем обычному SCSS. 
+                    Каскад всё ещё прекрасно умеет делать свою работу, если ему не мешать.
+                </p>
+                <Code />
+            </li>
+
+            <li class="frontend-grid__card">
+                <p class="card__number">04</p>
+                <h3 class="card__title">Vue.js</h3>
+                <p class="card__text">
+                    Крепкая основа для большого проекта. Достаточно стабильности. Минимум лишнего. 
+                    Мы не гонимся за модными трендами и не хотим ничего никому доказыать. Если это 
+                    работает — это используется.
+                </p>
+                <Code2 />
+            </li>
+
+        </ol>
+
+    </div>
+
+</div>
+</section>

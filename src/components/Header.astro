@@ -4,7 +4,7 @@ import '../assets/css/header.scss'
 
 <header class="header">
     <nav class="container header__container">
-        <a href="/" class="header__logo">ALTUSZKA</a>
+        <a href="#hero" class="header__logo">ALTUSZKA</a>
         <ul class="header__list">
             <li class="header__item"><a class="header__link" href="#project">Проект</a></li>
             <li class="header__item"><a class="header__link" href="#frontend">Frontend</a></li>
@@ -16,19 +16,33 @@ import '../assets/css/header.scss'
 </header>
 
 <script>
-    const header = document.querySelector('header');
+    const header = document.querySelector('.header');
 
     const toggleHeaderClass = () => {
         if (!header) return;
-        
-        if (window.scrollY > 5) {
-            header.classList.add('header--scrolled');
-        } else {
-            header.classList.remove('header--scrolled');
-        }
+        header.classList.toggle('header--scrolled', window.scrollY > 5);
     };
 
     window.addEventListener('scroll', toggleHeaderClass, { passive: true });
-    
     toggleHeaderClass();
+
+    const whiteSections = document.querySelectorAll('.backend-section');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-10px 0px -90% 0px', 
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                header?.classList.add('dark');
+            } else {
+                header?.classList.remove('dark');
+            }
+        });
+    }, observerOptions);
+
+    whiteSections.forEach(section => observer.observe(section));
 </script>

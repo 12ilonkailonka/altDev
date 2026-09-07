@@ -154,6 +154,7 @@ $breakpoints: (
         width: 100%;
         height: 100%;
         object-fit: cover;
+        pointer-events: none;
     }
 }
 
@@ -191,10 +192,22 @@ $breakpoints: (
         font-size: 2.2rem;
         font-weight: 700;
         padding-bottom: 1.6rem;
+
+        @include respond-to(lg) {
+            sfont-size: 2rem;
+        }
+
+        @include respond-to(md) {
+            font-size: 1.5rem;
+        }
     }
 
     &__text {
         color: var(--text-soft);
+
+        @include respond-to(md) {
+            font-size: 1rem;
+        }
     }
 
     &__avatars {
@@ -350,6 +363,10 @@ $breakpoints: (
     display: flex;
     gap: 2rem;
     color: var(--accent);
+
+    &.meta-horizontal {
+        flex-direction: column;
+    }
 }
 
 .point {
@@ -387,6 +404,380 @@ $breakpoints: (
 
         &.white {
             color: var(--text-light);
+        }
+    }
+}
+
+
+.frontend-section {
+    background-color: var(--bg-dark);
+    padding-bottom: 5rem;
+}
+
+.frontend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include respond-to(xl) {
+        grid-template-columns: 1fr;
+    }
+
+    &__title {
+        font-size: 3rem;
+        padding: 2rem 0;
+        font-weight: 700;
+        max-width: 25rem;
+
+        @include respond-to(lg) {
+            font-size: 2.5rem;
+        }
+
+        @include respond-to(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        color: var(--text-soft);
+        max-width: 30rem;
+    }
+
+    &__technologies {
+        display: flex;
+        padding-top: 2rem;
+        gap: 1rem;
+    }
+
+    &__technology {
+        padding: .55rem .5rem;
+        border-radius: var(--radius-pill);
+        font-size: .8rem;
+        background-color: var(--surface);
+        border: solid 1px var(--border);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+    }
+
+    &__card {
+        background-color: var(--surface);
+        border-radius: var(--radius-l);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    &__item {
+        position: sticky;
+        top: 10rem;
+        height: fit-content;
+
+        @include respond-to(xl) {
+            position: inherit;
+        }
+    }
+}
+
+.card {
+    &__number {
+        color: var(--accent);
+        padding: 1rem 0;
+    }
+
+    &__text {
+        padding: 1rem 0;
+        font-size: 1.25rem;
+
+        & > span {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        & > span.accent {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        @include respond-to(md) {
+            font-size: 1.15rem;
+        }
+    }
+}
+
+
+.backend-section {
+  transition: var(--transition);
+  background-image: var(--bg-dark-surface);
+
+  &__title {
+    color: var(--bg);
+    font-size: 3rem;
+    max-width: 40rem;
+
+    @include respond-to(lg) {
+        sfont-size: 2.5rem;
+    }
+
+    @include respond-to(md) {
+        font-size: 2rem;
+    }
+  }
+
+  &__text {
+    color: var(--text-muted);
+    padding: 1.5rem 0;
+    max-width: 30rem;
+    
+    & > span {
+      color: var(--accent);
+    }
+  }
+}
+
+
+.re {
+    padding: 700px;
+    color: var(--bg);
+}
+
+.quote {
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        padding-bottom: 7.5rem;
+
+        @include respond-to(xl) {
+            grid-template-columns: 5rem 1fr;
+        }
+
+        @include respond-to(lg) {
+            grid-template-columns: 2.5rem 1fr;
+            padding: 3rem 0;
+        }
+    }
+
+    &__quotation-mark {
+        font-size: 5rem;
+        color: var(--accent);
+        padding: 5rem 0;
+
+        @include respond-to(xl) {
+            font-size: 4rem;
+        }
+
+        @include respond-to(lg) {
+            grid-template-columns: 2rem 1fr;
+        }
+    }
+
+    &__text {
+        color: var(--bg);
+        font-size: 3rem;
+        max-width: 50rem;
+        padding: 5rem 0;
+
+        @include respond-to(xl) {
+            font-size: 2rem;
+            max-width: 40rem;
+        }
+
+        @include respond-to(lg) {
+            grid-template-columns: 2rem 1fr;
+        }
+    }
+}
+
+.meta-right {
+    flex-direction:row-reverse;
+    padding-bottom: 2rem;
+}
+
+.backend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5rem 0;
+    gap: 5rem;
+
+    @include respond-to(xl) {
+        grid-template-columns: 1fr;
+    }
+
+    &__card {
+        color:var(--bg);
+        background-color: var(--bg-black);
+        padding: 1.5rem;
+        border-radius: var(--radius-l);
+        margin: 1.5rem 0;
+    }
+
+    &__item.item_1 {
+        order: 1;
+
+        @include respond-to(xl) {
+            position: inherit;
+            order: 2;
+        }
+    }
+
+    &__item.item_2 {
+        position: sticky;
+        top: 10rem;
+        height:fit-content;
+        order: 2;
+
+        @include respond-to(xl) {
+            position: inherit;
+            order: 1;
+        }
+    }
+}
+
+
+.history-section {
+    padding: 3rem 0;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 20rem 1fr;
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: 5rem;
+        max-width: 50rem;
+        padding-bottom: 1rem;
+        font-weight: 800;
+    }
+
+    &__subtitle {
+        font-size: 2.5rem;
+        max-width: 50rem;
+        padding: 1rem 0;
+    }
+
+    &__text {
+        color: var(--text-soft);
+        max-width: 50rem;
+        padding: 0.5rem 0;
+        margin-left: 5rem;
+        margin-top: 1rem;
+
+        & > span {
+            color: var(--accent);
+        }
+    }
+
+    & > hr {
+        margin-left: 5rem;
+    }
+}
+
+
+.timeline {
+    position: relative;
+
+    &__era {
+        position: relative;
+        margin: 1rem 0;
+        min-height: 500px;
+        overflow: hidden;
+    }
+
+    &__year {
+        position: absolute;
+        font-size: 30vw;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 100;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        z-index: -1;
+        opacity: 0.5;
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &.hidden {
+            opacity: 0;
+            transform: translate(-50%, -40%) scale(0.85);
+        }
+
+        &.year_1 {
+            background-image: linear-gradient(to right, #9eb48c52, #4b9ada46);
+        }
+
+        &.year_2 {
+            background-image: linear-gradient(to right, #f64f5a46, #12e93240);
+        }
+
+        &.year_3 {
+            background-image: linear-gradient(to right, #b04ff647, #ff05543c, #ffcc1340);
+        }
+
+        &.year_4 {
+            background-image: linear-gradient(to right, #4febf647, #ff811340);
+        }
+    }
+
+    &__title {
+        font-size: 6rem;
+        font-weight: 700;
+        padding: 2rem 0;
+
+        &.right {
+            text-align: right;
+        }
+    }
+
+    &__grid-item {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        & > img {
+            aspect-ratio: 1 / 1;
+            height: 20rem;
+            border-radius: var(--radius-l);
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+    }
+
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 2rem;
+
+        &.right {
+            grid-template-columns: 3fr 2fr;
+        }
+    }
+
+    &__text {
+        font-size: 1.33rem;
+        padding: 1.5rem 0;
+
+        &.accent {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1.5;
         }
     }
 }

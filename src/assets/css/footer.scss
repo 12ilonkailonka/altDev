@@ -1,0 +1,30 @@
+.disclamer {
+    background-color: #e3e4ee;
+    width: 100vw;
+    font-size: 1rem;
+
+    &__list {
+        list-style: decimal;
+        padding: 3rem 0;
+
+        & > * {
+            padding: .33rem 0;
+        }
+    }
+}
+
+.disclamer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25rem 0;
+    }
+}

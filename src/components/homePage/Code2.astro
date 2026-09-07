@@ -1,0 +1,15 @@
+<pre>
+<code>
+&lt;<span class="red">script</span> <span class="orange">setup lang</span>=<span class="green">"ts"</span>&gt;
+
+<span class="purple">function</span> <span class="blue">getRandomDev</span><span class="yellow-sat">&lt;</span><span class="yellow">T</span><span class="yellow-sat">&gt;(</span><span class="red"><i>arr</i></span>: <span class="yellow">T</span><span class="purple">[]</span><span class="yellow-sat">)</span>: <span class="yellow">T</span> <span class="yellow-sat">&#123;</span>
+    <span class="purple">const</span> <span class="orange">randomIndex</span> = <span class="red">Math</span>.<span class="blue">floor</span><span class="purple">(</span><span class="red">Math</span>.<span class="blue">random() *</span> <span class="red">arr</span>.<span class="red">length</span><span class="purple">)</span>;
+    <span class="purple">return</span> <span class="red">arr</span><span class="purple">[<span class="red">randomIndex</span>]</span>;
+<span class="yellow-sat">&#125;</span>
+
+<span class="purple">const</span> <span class="orange">devs</span>: <span class="yellow">string</span><span class="yellow-sat">[]</span> = <span class="yellow-sat">[</span><span class="green">'Maryna'</span>, <span class="green">'Ala'</span>, <span class="green">'Dasza'</span>, <span class="green">'Oxana'</span><span class="yellow-sat">]</span>;
+<span class="purple">const</span> <span class="orange">randomDev</span> = <span class="blue">getRandomDev</span><span class="yellow-sat">(</span><span class="red">devs</span><span class="yellow-sat">)</span>;
+
+&lt;/<span class="red">script</span>&gt;
+</code>
+</pre>

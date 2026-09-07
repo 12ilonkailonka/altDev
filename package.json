@@ -12,11 +12,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.2.10"
+    "astro": "^7.2.10",
+    "gsap": "^3.15.0",
+    "sass-migrator": "^2.6.1"
   },
   "allowScripts": {
     "esbuild": true,
-    "sass@1.103.1": true
+    "sass@1.103.1": true,
+    "sass-migrator@2.6.1": true,
+    "gsap@3.15.0": true
   },
   "devDependencies": {
     "sass-embedded": "^1.103.1"

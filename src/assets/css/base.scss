@@ -32,12 +32,14 @@ body {
     font-size: 1.125rem;
     color: var(--text);
     background: var(--bg);
-    line-height: 1;
+    line-height: 1.1;
+    letter-spacing: 0.75px;
 }
 
 .container {
     width: 95vw;
     max-width: 81rem;
+    overflow: visible;
 }
 
 .page {
@@ -71,6 +73,7 @@ body {
 
         &:hover {
             background-color: var(--accent-hover);
+            box-shadow: var(--shadow);
         }
     }
 
@@ -80,8 +83,10 @@ body {
         color: var(--accent);
 
         &:hover {
-            background-color: var(--accent);
-            color: var(--surface)
+            background-color: var(--accent-hover);
+            border: solid 0.1rem var(--accent-hover);
+            color: var(--surface);
+            box-shadow: var(--shadow);
         }
     }
 }
@@ -92,6 +97,10 @@ hr {
     height: 0.1rem;
     border-radius: var(--radius-pill);
     margin: 1.25rem 0;
+}
+
+ol {
+    list-style: none;
 }
 
 
@@ -116,5 +125,74 @@ hr {
 
     50% {
         transform: translateY(12px) rotate(2deg);
+    }
+}
+
+pre {
+    padding: 1.5rem;
+    background-color: var(--text);
+    border-radius: var(--radius-m);
+    color: var(--surface);
+    line-height: 1.5;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+    
+    @include respond-to(xl) {
+        display: none;
+        visibility: visible;
+    }
+}
+
+span {
+
+    &.var {
+        color: rgb(108, 174, 255);
+    }
+
+    &.value {
+        color:rgb(206, 194, 61);
+    }
+
+    &.root {
+        color:rgb(187, 103, 251);
+    }
+
+    &.number {
+        color:rgb(251, 152, 103);
+    }
+
+    &.time {
+        color:rgb(255, 70, 70);
+    }
+
+    //colors
+
+    &.red {
+        color:rgb(255, 122, 122);
+    }
+
+    &.blue {
+        color: rgb(108, 174, 255);
+    }
+
+    &.orange {
+        color:rgb(255, 187, 120);
+    }
+
+    &.yellow {
+        color:rgb(255, 233, 152);
+    }
+
+    &.yellow-sat {
+        color:rgb(255, 198, 40);
+    }
+
+    &.green {
+        color:rgb(127, 255, 122);
+    }
+
+    &.purple {
+        color:rgb(245, 135, 255);
     }
 }
