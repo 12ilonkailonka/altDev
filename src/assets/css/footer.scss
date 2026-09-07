@@ -1,3 +1,20 @@
+$breakpoints: (
+  sm: 500px,
+  md: 650px,
+  lg: 800px,
+  xl: 1100px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Не найден брейкпоинт: #{$breakpoint}.";
+  }
+}
+
 .disclamer {
     background-color: #e3e4ee;
     width: 100vw;
@@ -26,5 +43,10 @@
         display: flex;
         justify-content: space-between;
         padding: 1.25rem 0;
+
+        @include respond-to(md) {
+            flex-direction: column;
+            gap: 1rem;
+        }
     }
 }
