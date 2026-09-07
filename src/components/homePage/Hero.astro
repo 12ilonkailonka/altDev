@@ -1,3 +1,7 @@
+---
+import { Image } from 'astro:assets';
+import bd from '../../assets/media/bd.jpg';
+---
 <section class="page hero-section" id="hero">
 <div class="container">
 	<div class="hero-grid">
@@ -13,8 +17,12 @@
 					а не только смотреть на цифры просмотров.
 				</p>
 				<div class="hero-grid__buttons-wrapper">
-					<button class="hero-grid__button button button-colored">Узнать о проекте</button>
-					<button class="hero-grid__button button button-ghost">Как мы это делаем</button>
+					<form action="#project" class="button-wrapper">
+						<button class="hero-grid__button button button-colored">Узнать о проекте</button>
+					</form>
+					<form action="#history" class="button-wrapper">
+						<button class="hero-grid__button button button-ghost">Как мы это делаем</button>
+					</form>
 				</div>
 				<hr>
 				<ul class="hero-grid__points">
@@ -59,10 +67,7 @@
 				<hr>
 
 				<div class="story-preview">
-					<img class="story-preview__image"
-						src="/bd.jpg"
-						alt="PostImage"
-					>
+					<Image class="story-preview__image" src={bd} alt="Оксана" />
 				</div>
 
 				<p class="card__genre">Романтика · 14 мин</p>

@@ -640,6 +640,10 @@ $breakpoints: (
         display: grid;
         grid-template-columns: 20rem 1fr;
         gap: 2rem;
+
+        @include respond-to(xl) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__title {
@@ -647,12 +651,20 @@ $breakpoints: (
         max-width: 50rem;
         padding-bottom: 1rem;
         font-weight: 800;
+
+        @include respond-to(md) {
+            font-size: 3rem;
+        }
     }
 
     &__subtitle {
         font-size: 2.5rem;
         max-width: 50rem;
         padding: 1rem 0;
+
+        @include respond-to(md) {
+            font-size: 2rem;
+        }
     }
 
     &__text {
@@ -729,6 +741,10 @@ $breakpoints: (
         &.right {
             text-align: right;
         }
+
+        @include respond-to(md) {
+            font-size: 3rem;
+        }
     }
 
     &__grid-item {
@@ -766,6 +782,14 @@ $breakpoints: (
 
         &.right {
             grid-template-columns: 3fr 2fr;
+
+            @include respond-to(xl) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @include respond-to(xl) {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -778,6 +802,11 @@ $breakpoints: (
             font-weight: 900;
             color: var(--accent);
             line-height: 1.5;
+
+            @include respond-to(md) {
+                font-size: 1.5rem;
+                font-weight: inherit;
+            }
         }
     }
 }

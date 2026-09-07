@@ -1,5 +1,7 @@
 ---
-
+import { Image } from 'astro:assets';
+import bd from '../../assets/media/bd.jpg';
+import mara from '../../assets/media/mara.png';
 ---
 <section class="page history-section" id="history">
 <div class="container">
@@ -91,7 +93,7 @@
                     </p>
                 </div>
                 <div class="timeline__grid-item">
-                    <img src="/src/assets/media/mara.png" alt="">
+                    <Image src={mara} alt="Марина рисует сайт" />
                 </div>
             </div>
         </article>
@@ -135,7 +137,7 @@
                     </p>
                 </div>
                 <div class="timeline__grid-item">
-                    <img class="timeline__image" src="/src/assets/media/mara.png" alt="">
+                    <Image src={bd} alt="Команда разработки" />
                 </div>
             </div>
         </article>

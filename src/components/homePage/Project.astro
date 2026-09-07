@@ -1,3 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import publish from '../../assets/media/ico/publish.svg';
+import community from '../../assets/media/ico/community.svg';
+import talk from '../../assets/media/ico/talk.svg';
+import book from '../../assets/media/ico/book.svg';
+
+---
 <section class="page project-section" id="project">
 <div class="container">
 
@@ -34,7 +42,7 @@
     <ul class="project-section__points">
         <li class="project-section__point">
             <p class="point__number">01</p>
-            <img src="/ico/book.svg" class="point__ico" alt="" aria-hidden="true">
+            <Image class="point__ico" src={book} alt="" aria-hidden="true"/>
             <h3 class="point__title">Публикации</h3>
             <p class="point__text">
                 Истории и мысли людей, которые просто не могут молчать. 
@@ -43,21 +51,21 @@
 
         <li class="project-section__point">
             <p class="point__number">02</p>
-            <img src="/ico/community.svg" class="point__ico" alt="" aria-hidden="true">
+            <Image class="point__ico" src={community} alt="" aria-hidden="true"/>
             <h3 class="point__title">Сообщества</h3>
             <p class="point__text">Места для жанров, идей, фэндомов, маленьких компаний и просто людей, которым есть о чём поговорить.</p>
         </li>
 
         <li class="project-section__point">
             <p class="point__number">03</p>
-            <img src="/ico/talk.svg" class="point__ico" alt="" aria-hidden="true">
+            <Image class="point__ico" src={talk} alt="" aria-hidden="true"/>
             <h3 class="point__title">Обсуждения</h3>
             <p class="point__text">Комментарии не как формальность, а как самостоятельная часть опыта: ветки, ответы и длинные разговоры.</p>
         </li>
 
         <li class="project-section__point blue">
             <p class="point__number white">04</p>
-            <img src="/ico/publish.svg" class="point__ico white" alt="" aria-hidden="true">
+            <Image class="point__ico white" src={publish} alt="" aria-hidden="true"/>
             <h3 class="point__title white">Связи</h3>
             <p class="point__text white">Мы хотим, чтобы интерес к одному тексту мог неожиданно привести к человеку, сообществу или совершенно другой теме.</p>
         </li>
