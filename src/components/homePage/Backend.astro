@@ -1,5 +1,7 @@
 ---
-
+import { useTranslations } from '../../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 <section class="page backend-section" id="backend">
 <div class="container">
@@ -10,32 +12,19 @@
             <li class="backend-grid__card">
                 <p class="card__number">01</p>
                 <h3 class="card__title">Fast API</h3>
-                <p class="card__text">
-                    Быстрая и <span class="accent">надёжная</span> основа для эффективной работы с данными. Получаем, 
-                    проверяем, сохраняем, по запросу отдаём. 
-                </p>
-                <p class="card__text">
-                    Быстрая и <span class="accent">надёжная</span> основа для эффективной работы с данными. Получаем, 
-                    проверяем, сохраняем, по запросу отдаём. 
-                </p>
+                <p class="card__text">{t('back.text1')}<span class="accent">{t('back.text2')}</span>{t('back.text3')}</p>
             </li>
 
             <li class="backend-grid__card">
                 <p class="card__number">02</p>
                 <h3 class="card__title">Python</h3>
-                <p class="card__text">
-                    Удобный инструмент для быстрого получения стабильного результата. Тратим время на 
-                    безупречную логику, а не борьбу и вечную настройку инструмента. 
-                </p>
+                <p class="card__text">{t('back.text4')}</p>
             </li>
 
             <li class="backend-grid__card">
                 <p class="card__number">03</p>
                 <h3 class="card__title">PostgreSQL</h3>
-                <p class="card__text">
-                    Стандарт индустрии — мощная универсальная база данных, способная хранить безопасно и 
-                    структурирвоанно данные профилей, рассказов, комментариев и прочей нужный интерактив. 
-                </p>
+                <p class="card__text">{t('back.text5')}</p>
             </li>
 
          </ol>
@@ -47,12 +36,8 @@
                 <p class="section-meta__name">Frontend</p>
             </div>
 
-            <h2 class="backend-section__title">Там, где ничего не видно, всё тоже должно быть красиво.</h2>
-            <p class="backend-section__text">
-                Красота бывает разной. Красота бэкэнда в безупречной <span>логике</span>, идеальной <span>расширяемости</span> и 
-                <span> поддерживаемости</span>. <br> <br> 
-                Выстраивали систему так, чтобы она не подвела в самый ответственный момент.
-            </p>
+            <h2 class="backend-section__title">{t('back.title')}</h2>
+            <p class="backend-section__text">{t('back.text6')}<span>{t('back.text7')}</span>{t('back.text8')}<span>{t('back.text9')}</span>{t('back.text10')}<span>{t('back.text11')}</span><br><br> {t('back.text12')}</p>
 
          </div>
     </div>
@@ -61,11 +46,7 @@
 
     <div class="quote__wrapper">
         <span class="quote__quotation-mark">“</span>
-        <blockquote class="quote__text">
-            Хорошая архитектура — это когда через год разработчик 
-            открывает свой старый код и не хочет интуитивно сказать:
-            "Что за идиот это придумывал?"
-        </blockquote>
+        <blockquote class="quote__text">{t('back.text13')}</blockquote>
     </div>
 
 </div>

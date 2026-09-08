@@ -4,38 +4,27 @@ import publish from '../../assets/media/ico/publish.svg';
 import community from '../../assets/media/ico/community.svg';
 import talk from '../../assets/media/ico/talk.svg';
 import book from '../../assets/media/ico/book.svg';
-
+import { useTranslations } from '../../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 <section class="page project-section" id="project">
 <div class="container">
 
     <div class="section-meta">
         <p class="section-meta__number">01</p>
-        <p class="section-meta__name">Что такое Altuszka</p>
+        <p class="section-meta__name">{t('project.whatIsIt')} Altuszka</p>
     </div>
 
-    <h2 class="project-section__title">Площадка, где текст — только начало разговора.</h2>
+    <h2 class="project-section__title">{t('project.platform')}</h2>
 
     <article class="project-section__grid">
 
-         <p class="project-section__text-big">
-            Строили почти социальную сеть. Только вместо ленты — <span>люди, мнения и идеи</span>, 
-            а вместо сухого алгоритма — общение, споры и жизнь.
-        </p>
+         <p class="project-section__text-big">{t('project.textBig1')}<span>{t('project.textBig2')}</span>, {t('project.textBig3')}</p>
 
         <div class="project-section__item">
-
-            <p class="project-section__text-small">
-                В основе социальных сетей лежит лента и алгоритмы, пытающиеся показывать только то, 
-                что человек хотел бы увидеть. Но разве знакомство должно начинаться с лести? 
-            </p>
-
-            <p class="project-section__text-small">
-                Читатель, писатель, редактор, администратор — не важно. Все мы объединены идеей о том, 
-                что человек и его мысль превыше всего. И только живое столкновение этих мыслей способно
-                рождать полноценный социум.
-            </p>
-
+            <p class="project-section__text-small">{t('project.textSmall1')}</p>
+            <p class="project-section__text-small">{t('project.textSmall2')}</p>
         </div>
     </article>
 
@@ -43,31 +32,29 @@ import book from '../../assets/media/ico/book.svg';
         <li class="project-section__point">
             <p class="point__number">01</p>
             <Image class="point__ico" src={book} alt="" aria-hidden="true"/>
-            <h3 class="point__title">Публикации</h3>
-            <p class="point__text">
-                Истории и мысли людей, которые просто не могут молчать. 
-                Не ради галочки и цифры оценок, ради того, чтобы быть услышанными.</p>
+            <h3 class="point__title">{t('project.publications')}</h3>
+            <p class="point__text">{t('project.text1')}</p>
         </li>
 
         <li class="project-section__point">
             <p class="point__number">02</p>
             <Image class="point__ico" src={community} alt="" aria-hidden="true"/>
-            <h3 class="point__title">Сообщества</h3>
-            <p class="point__text">Места для жанров, идей, фэндомов, маленьких компаний и просто людей, которым есть о чём поговорить.</p>
+            <h3 class="point__title">{t('project.community')}</h3>
+            <p class="point__text">{t('project.text2')}</p>
         </li>
 
         <li class="project-section__point">
             <p class="point__number">03</p>
             <Image class="point__ico" src={talk} alt="" aria-hidden="true"/>
-            <h3 class="point__title">Обсуждения</h3>
-            <p class="point__text">Комментарии не как формальность, а как самостоятельная часть опыта: ветки, ответы и длинные разговоры.</p>
+            <h3 class="point__title">{t('project.talk')}</h3>
+            <p class="point__text">{t('project.text3')}</p>
         </li>
 
         <li class="project-section__point blue">
             <p class="point__number white">04</p>
             <Image class="point__ico white" src={publish} alt="" aria-hidden="true"/>
-            <h3 class="point__title white">Связи</h3>
-            <p class="point__text white">Мы хотим, чтобы интерес к одному тексту мог неожиданно привести к человеку, сообществу или совершенно другой теме.</p>
+            <h3 class="point__title white">{t('project.connect')}</h3>
+            <p class="point__text white">{t('project.text4')}</p>
         </li>
     </ul>
 

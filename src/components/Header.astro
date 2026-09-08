@@ -1,16 +1,18 @@
 ---
 import '../assets/css/header.scss'
+import { useTranslations } from '../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 
 <header class="header">
     <nav class="container header__container">
         <a href="#hero" class="header__logo">ALTUSZKA</a>
         <ul class="header__list">
-            <li class="header__item"><a class="header__link" href="#project">Проект</a></li>
+            <li class="header__item"><a class="header__link" href="#project">{t('nav.project')}</a></li>
             <li class="header__item"><a class="header__link" href="#frontend">Frontend</a></li>
             <li class="header__item"><a class="header__link" href="#backend">Backend</a></li>
-            <li class="header__item"><a class="header__link" href="#history">История</a></li>
-            <li class="header__item"><a class="header__link" href="#developers">Команда</a></li>
+            <li class="header__item"><a class="header__link" href="#history">{t('nav.history')}</a></li>
         </ul>
     </nav>
 </header>

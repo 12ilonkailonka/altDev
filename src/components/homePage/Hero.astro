@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import bd from '../../assets/media/bd.jpg';
+import { useTranslations } from '../../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 <section class="page hero-section" id="hero">
 <div class="container">
@@ -9,36 +12,32 @@ import bd from '../../assets/media/bd.jpg';
 		<div class="hero-grid__item item_1">
 			<div class="hero-grid__wrapper">
 				<h1 class="hero-grid__title">
-					Пишем не только <span> истории.</span> Пишем место для них.
+					{t('hero.title1')} <span> {t('hero.title2')}</span> {t('hero.title3')}
 				</h1>
-				<p class="hero-grid__text">
-					Altuszka — платформа для авторов, читателей и людей, 
-					которым всё ещё хочется разговаривать друг с другом, 
-					а не только смотреть на цифры просмотров.
-				</p>
+				<p class="hero-grid__text">{t('hero.text')}</p>
 				<div class="hero-grid__buttons-wrapper">
 					<form action="#project" class="button-wrapper">
-						<button class="hero-grid__button button button-colored">Узнать о проекте</button>
+						<button class="hero-grid__button button button-colored">{t('hero.learn')}</button>
 					</form>
 					<form action="#history" class="button-wrapper">
-						<button class="hero-grid__button button button-ghost">Как мы это делаем</button>
+						<button class="hero-grid__button button button-ghost">{t('hero.do')}</button>
 					</form>
 				</div>
 				<hr>
 				<ul class="hero-grid__points">
 					<li class="points__item">
 						<p class="points__number">1</p>
-						<p class="points__point">Сообщество прежде алгоритма</p>
+						<p class="points__point">{t('hero.community')}</p>
 					</li>
 					<hr>
 					<li class="points__item">
 						<p class="points__number">2</p>
-						<p class="points__point">Технологии без магии</p>
+						<p class="points__point">{t('hero.tech')}</p>
 					</li>
 					<hr>
 					<li class="points__item">
 						<p class="points__number">3</p>
-						<p class="points__point">Сделано людьми для людей</p>
+						<p class="points__point">{t('hero.people')}</p>
 					</li>
 				</ul>
 			</div>
@@ -48,34 +47,29 @@ import bd from '../../assets/media/bd.jpg';
 			<div class="card hero-grid__card">
 
 				<article class="hero-grid__article ribbon_1 animate floating-card--quote">
-					<p class="hero-grid__ribbon-1-text">
-						«А если хорошая соцсеть — это просто старый форум, который наконец научился быть удобным?»
-					</p>
+					<p class="hero-grid__ribbon-1-text">{t('hero.article')}</p>
 				</article>
 
 				<article class="hero-grid__article ribbon_2 floating-card floating-card--quote">
-					<h2 class="hero-grid__ribbon-2-title">Обсуждение главы</h2>
-					<p class="hero-grid__ribbon-2-text"><span>↳</span> Новые ответы · 8</p>
+					<h2 class="hero-grid__ribbon-2-title">{t('hero.section')}</h2>
+					<p class="hero-grid__ribbon-2-text"><span>↳</span> {t('hero.answers')}</p>
 				</article>
 
 				<div class="card__meta">
 					<p class="card__path">altuszka / feed</p>
-					<p class="card__tile">Новый</p>
+					<p class="card__tile">{t('hero.new')}</p>
 				</div>
 
-				<p class="card__block-title">Сегодня читают</p>
+				<p class="card__block-title">{t('hero.today')}:</p>
 				<hr>
 
 				<div class="story-preview">
 					<Image class="story-preview__image" src={bd} alt="Оксана" />
 				</div>
 
-				<p class="card__genre">Романтика · 14 мин</p>
-				<p class="card__title">Новые приключения Оксаны</p>
-				<p class="card__text">
-					Сегодня вечером в час небывало жаркого заката на одной 
-					из главных улиц появились две странные девушки
-				</p>
+				<p class="card__genre">{t('hero.genre')}</p>
+				<p class="card__title">{t('hero.name')}</p>
+				<p class="card__text">{t('hero.story-text')}...</p>
 
 				<div class="card__rating-meta">
 					<ul class="card__avatars">
@@ -83,7 +77,7 @@ import bd from '../../assets/media/bd.jpg';
 						<li class="card__avatar c2">О</li>
 						<li class="card__avatar c3">М</li>
 					</ul>
-					<p class="card__views">36 реакций</p>
+					<p class="card__views">36 {t('hero.react')}</p>
 				</div>
 
 			</div>

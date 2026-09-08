@@ -28,7 +28,6 @@ $breakpoints: (
     &__title {
         font-size: 3.75rem;
         font-weight: 600;
-        line-height: 0.8;
         max-width: 38rem;
 
         @include respond-to(lg) {

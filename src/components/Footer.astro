@@ -1,40 +1,30 @@
 ---
 import '../assets/css/footer.scss'
+import { useTranslations } from '../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 
 const currentYear = new Date().getFullYear().toString();
 
-const developers: string[] = ['Мариша', 'Аля', 'Даша', 'Оксана'];
-const index = Math.random() * developers.length;
-const randomDeveloper = developers[Math.floor(index)];
+const devs = ['maryna', 'oxana', 'ala', 'dasza'] as const;;
+const randomDevKey = devs[Math.floor(Math.random() * devs.length)];
 ---
 <footer class="footer">
 
 <section class="disclamer">
     <div class="container disclamer__container">
         <ol class="disclamer__list">
-            <li class="disclamer__item">
-                Данный сайт является промо-материалами для проекта, который пока что находитя 
-                в стадии активной разработки, и данные о проекте могут меняться. Ничего из 
-                указанного на данном сайте не является финальным и призвано лишь давать общее 
-                представление о ходе работ.
-            </li>
-            <li class="disclamer__item">
-                Сайт содержит материалы эротической направленности и не предназначен для просмотра
-                лицам не достигшем полного совершеннолетнего возраста, установленного местным 
-                законодательством. Как правило 18+. Иногда возможны различия.
-            </li>
-            <li class="disclamer__item">
-                Мы можем собирать некоторые данные о пользователях, такие как страна (исходя из IP-адреса),
-                время просмотра и выбранный язык. Это необходимо для уточнения целевой аудитории проекта.
-            </li>
+            <li class="disclamer__item">{t('footer.disclamer1')}</li>
+            <li class="disclamer__item">{t('footer.disclamer2')}</li>
+            <li class="disclamer__item">{t('footer.disclamer3')}</li>
         </ol>
     </div>
 </section>
 
 <section class="footer-content">
     <div class="container footer-content__wrapper">
-        <p class="footer-content__copyright">Altuszka &copy; 2024–{currentYear}. Все права защищены.</p>
-        <p class="footer-content__love">Сделано с любовью, {randomDeveloper}</p>
+        <p class="footer-content__copyright">Altuszka &copy; 2024–{currentYear}. {t('footer.copyright')}</p>
+        <p class="footer-content__love">{t('footer.love')} {t(`footer.developer.${randomDevKey}`)}</p>
     </div>  
 </section>
 </footer>

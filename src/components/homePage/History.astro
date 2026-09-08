@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import bc from '../../assets/media/bc.jpg';
 import mara from '../../assets/media/mara.png';
+import { useTranslations } from '../../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 <section class="page history-section" id="history">
 <div class="container">
@@ -10,32 +13,19 @@ import mara from '../../assets/media/mara.png';
 
         <div class="section-item section-meta">
             <p class="section-meta__number">04</p>
-            <p class="section-meta__name">Немного истории</p>
+            <p class="section-meta__name">{t('history.title1')}</p>
         </div>
 
         <div class="section-item">
-            <h2 class="history-section__title">Интернет уже умел быть сообществом.</h2>
+            <h2 class="history-section__title">{t('history.title2')}</h2>
 
-            <p class="history-section__subtitle">
-                Старые форумы были неудобными, шумными, местами совершенно 
-                дикими — и при этом удивительно человеческими.
-            </p>
+            <p class="history-section__subtitle">{t('history.text1')}</p>
 
-            <p class="history-section__text">
-                Там можно было прийти ради ответа на один вопрос, остаться ради разговора 
-                и через несколько месяцев внезапно знать половину постоянных участников по никам.
-            </p>
+            <p class="history-section__text">{t('history.text2')}</p>
 
-            <p class="history-section__text">
-                Современные платформы стали быстрее, красивее и гораздо умнее. 
-                Но вместе с этим пространство между людьми постепенно заняли 
-                рекомендации, метрики удержания и алгоритмические ленты.
-            </p>
+            <p class="history-section__text">{t('history.text3')}</p>
 
-            <p class="history-section__text">
-                Алгоритм отлично понимает, что вам, вероятно, <span>понравится</span>. 
-                И именно поэтому слишком редко показывает то, что может <span>удивить</span>.
-            </p>
+            <p class="history-section__text">{t('history.text4')}<span>{t('history.text5')}</span>{t('history.text6')}<span>{t('history.text7')}</span></p>
 
             <hr>
         </div>
@@ -46,51 +36,27 @@ import mara from '../../assets/media/mara.png';
         <article class="timeline__era">
             <p class="timeline__year year_1">2024</p>
 
-            <h2 class="timeline__title right">Идея</h2>
+            <h2 class="timeline__title right">{t('history.title3')}</h2>
             <div class="timeline__grid right">
                 <div class="timeline__grid-item">
-                    <p class="timeline__text accent">
-                        Тоска рождает идею. <br>
-                        Идея рождает мечту. <br>
-                        Мечта рождает стремление. <br>
-                        Стремление меняет наш мир.
-                    </p>
+                    <p class="timeline__text accent">{t('history.text8')}<br>{t('history.text9')}<br>{t('history.text10')}<br>{t('history.text11')}</p>
                 </div>
                 <div class="timeline__grid-item">
-                    <p class="timeline__text">
-                        Литература штука локальная. Её можно переводить, но никакой перевод не обеспечит
-                        наличие культурного контекста. Мы считаем развитие литературы своей культуры 
-                        ценностью, поэтому и решили создать платформу, которая поспособствует этому.
-                    </p>
-                    <p class="timeline__text">
-                        Мы начали с маленького сайта на WordPress, чтобы понять, имеет ли начинание смысл. 
-
-                    </p>
+                    <p class="timeline__text">{t('history.text12')}</p>
+                    <p class="timeline__text">{t('history.text13')}</p>
                 </div>
             </div>
 
         </article>
         <article class="timeline__era">
             <p class="timeline__year year_2">2025</p>
-            <h2 class="timeline__title">Первые шаги</h2>
+            <h2 class="timeline__title">{t('history.title4')}</h2>
 
             <div class="timeline__grid">
                 <div class="timeline__grid-item">
-                    <p class="timeline__text">
-                        Быстро стало понятно, что WordPress для серьёзной платформы совершенно не 
-                        подходит — настроить и доработать его под свои нужды сложнее, чем сделать 
-                        всё с нуля.
-                    </p>
-                    <p class="timeline__text">
-                        Команда взялась за код. Было сделано несколько пробных версий, пока в конечном 
-                        счёте мы не осознали реальный масштаб проекта и не пришли к по-настоящему 
-                        серьёзному подходу.
-                    </p>
-                    <p class="timeline__text">
-                        Полноценное фронтэнд приложение, полноценный бэкэнд сервер, богатый опыт 
-                        взаимодействия, правильный дизайн, который не утомляет и позволяет быстро и удобно
-                        взаимодействовать с сайтом
-                    </p>
+                    <p class="timeline__text">{t('history.text14')}</p>
+                    <p class="timeline__text">{t('history.text15')}</p>
+                    <p class="timeline__text">{t('history.text16')}</p>
                 </div>
                 <div class="timeline__grid-item">
                     <Image src={mara} alt="Марина рисует сайт" />
@@ -99,42 +65,26 @@ import mara from '../../assets/media/mara.png';
         </article>
         <article class="timeline__era">
             <p class="timeline__year year_3">2026</p>
-            <h2 class="timeline__title right">Разработка</h2>
+            <h2 class="timeline__title right">{t('history.title5')}</h2>
 
             <div class="timeline__grid right">
                 <div class="timeline__grid-item">
-                    <p class="timeline__text accent">
-                        HTML — структурен. <br>
-                        CSS — изящен. <br>
-                        TypeScript — надёжен. <br>
-                        Python — красив.
-                    </p>
+                    <p class="timeline__text accent">{t('history.text17')}<br>{t('history.text18')}<br>{t('history.text19')}<br>{t('history.text20')}</p>
                 </div>
                 <div class="timeline__grid-item">
-                    <p class="timeline__text">
-                        И вот все звёзды сошлись, шестерёнки завертелись и мы взялись за активную работу
-                        по созданию и настройке платформы. Так родился этот сайт, где мы будем 
-                        публиковать новости хода разработки для своих, кому интересна судьба проекта.
-                    </p>
+                    <p class="timeline__text">{t('history.text21')}</p>
                 </div>
             </div>
         </article>
         <article class="timeline__era">
             <p class="timeline__year year_4">2027</p>
-            <h2 class="timeline__title">Релиз</h2>
+            <h2 class="timeline__title">{t('history.title6')}</h2>
 
             <div class="timeline__grid">
                 <div class="timeline__grid-item">
-                    <p class="timeline__text">
-                        Рассчитываем на публикацию готового приложения в начале 2027 года.
-                    </p>
-                    <p class="timeline__text">
-                        Первая версия будет призвана обкатать проект, найти первую аудиторию, 
-                        исправить все потенциальные ошибки и перейти к устойчивому развитию.
-                    </p>
-                    <p class="timeline__text">
-                        Рабочий вариант проекта — лучше тысячи статей о том, каким он будет.
-                    </p>
+                    <p class="timeline__text">{t('history.text22')}</p>
+                    <p class="timeline__text">{t('history.text23')}</p>
+                    <p class="timeline__text">{t('history.text24')}</p>
                 </div>
                 <div class="timeline__grid-item">
                     <Image src={bc} alt="Команда разработки" />

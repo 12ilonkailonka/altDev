@@ -1,6 +1,9 @@
 ---
 import Code from './Code.astro'
 import Code2 from './Code2.astro'
+import { useTranslations } from '../../i18n/utils';
+const locale = Astro.currentLocale ?? 'ua';
+const t = useTranslations(locale);
 ---
 <section class="page frontend-section" id="frontend">
 <div class="container">
@@ -12,12 +15,8 @@ import Code2 from './Code2.astro'
                 <p class="section-meta__number">02</p>
                 <p class="section-meta__name">Frontend</p>
             </div>
-            <h2 class="frontend-grid__title">Графика — это тоже язык.</h2>
-            <p class="frontend-grid__text">
-                Сначала мы задали себе вопрос — а как люди привыкли взаимодействовать с интерфейсом?
-                Потом задали вопрос — а что прямо сейчас людям не нравится в этом взаимодействии?
-                И наконец — а как мы можем решить эти проблемы в свойм?
-            </p>
+            <h2 class="frontend-grid__title">{t('front.title')}</h2>
+            <p class="frontend-grid__text">{t('front.text1')}</p>
 
             <ul class="frontend-grid__technologies">
                 <li class="frontend-grid__technology">Vue.js</li>
@@ -31,52 +30,31 @@ import Code2 from './Code2.astro'
 
             <li class="frontend-grid__card">
                 <p class="card__number">01</p>
-                <h3 class="card__title">Дизайн-код</h3>
-                <p class="card__text">
-                    Не готовое решение. Не чужая адоптация. Не модная сиюминутно картинка. 
-                    Набор строгих правил о том, что и как должно выглядеть, делающий каждый 
-                    блок и каждую страницу узнаваемыми и единообразными. 
-                </p>
-                <p class="card__text">
-                    Размеры, сетки, цвета, акценты, тени, анимации, скругления углов.
-                    Именно тысяча<span> мелочей</span> незаметных по отдельности и превращают очередной сайт
-                    в магию собственной <span>идентичности</span> и общего <span>стиля.</span>
+                <h3 class="card__title">{t('front.design')}</h3>
+                <p class="card__text">{t('front.text2')}</p>
+                <p class="card__text">{t('front.text3')}<span>{t('front.text4')}</span>{t('front.text5')}<span>{t('front.text6')}</span>{t('front.text7')}<span>{t('front.text8')}</span>
                 </p>
             </li>
 
             <li class="frontend-grid__card">
                 <p class="card__number">02</p>
                 <h3 class="card__title">Maryna Sans</h3>
-                <p class="card__text">
-                    Шрифт — это лицо любого бренда. Логотип обычно ютится в углу и сверху, никто
-                    не приходит его рассматривать. Брендовые <span class="accent">цвета</span> может и запоминаются, но это 
-                    лишь акценты.
+                <p class="card__text">{t('front.text9')}<span class="accent">{t('front.text10')}</span>{t('front.text11')}
                 </p>
-                <p class="card__text">
-                    Шрифт виден <span class="accent">всегда</span>. Он обязан не только быть узнаваемым, но и 
-                    сохранять при этом главную черту шрифта — возможность быстро и просто его шитать. Это сложный баланс
-                    между узнаваемостью, уникальностью и привычностью.
-                </p>
+                <p class="card__text">{t('front.text12')}<span class="accent">{t('front.text13')}</span>{t('front.text14')}</p>
             </li>
 
             <li class="frontend-grid__card">
                 <p class="card__number">03</p>
                 <h3 class="card__title">SCSS</h3>
-                <p class="card__text">
-                    Большую часть визуального слоя мы оставляем обычному SCSS. 
-                    Каскад всё ещё прекрасно умеет делать свою работу, если ему не мешать.
-                </p>
+                <p class="card__text">{t('front.text15')}</p>
                 <Code />
             </li>
 
             <li class="frontend-grid__card">
                 <p class="card__number">04</p>
                 <h3 class="card__title">Vue.js</h3>
-                <p class="card__text">
-                    Крепкая основа для большого проекта. Достаточно стабильности. Минимум лишнего. 
-                    Мы не гонимся за модными трендами и не хотим ничего никому доказыать. Если это 
-                    работает — это используется.
-                </p>
+                <p class="card__text">{t('front.text16')}</p>
                 <Code2 />
             </li>
 
